@@ -66,7 +66,7 @@ long long computeSecretFromJSON(const std::string &filename) {
         f0 += yi * li;
     }
 
-    // Round to nearest integer and return
+   
     return static_cast<long long>(round(f0));
 }
 
