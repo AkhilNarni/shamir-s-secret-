@@ -3,12 +3,12 @@
 #include <string>
 #include <cmath>
 #include <vector>
-#include <iomanip>      // for std::fixed and std::setprecision
-#include "json.hpp"     // Make sure this file is in your project folder
+#include <iomanip>     
+#include "json.hpp"     
 
 using json = nlohmann::json;
 
-// Convert value from base `base` to base 10
+
 double decodeBaseValue(const std::string &value, int base) {
     double result = 0;
     for (char ch : value) {
@@ -18,7 +18,7 @@ double decodeBaseValue(const std::string &value, int base) {
     return result;
 }
 
-// Compute the secret value (constant term of polynomial)
+
 long long computeSecretFromJSON(const std::string &filename) {
     std::ifstream file(filename);
     if (!file) {
@@ -48,7 +48,7 @@ long long computeSecretFromJSON(const std::string &filename) {
         }
     }
 
-    // Lagrange interpolation at x = 0 to get the constant term
+    
     double f0 = 0;
 
     for (int i = 0; i < k; ++i) {
